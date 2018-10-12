@@ -17,6 +17,7 @@
  */
 package org.daisy.braille.utils.pef;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -73,8 +74,8 @@ public class PEFNamespaceContext implements NamespaceContext {
 	}
 
 	@Override
-	public Iterator<Entry<String, String>> getPrefixes(String namespaceURI) {
-		return prefixes.entrySet().iterator();
+	public Iterator<String> getPrefixes(String namespaceURI) {
+		return Collections.singleton(getPrefix(namespaceURI)).iterator();
 	}
 
 }
